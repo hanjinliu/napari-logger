@@ -27,6 +27,8 @@ class CheckBoxes(Container):
             labels=False,
         )
         self.margins = (0, 0, 0, 0)
+        self[0].margins = (0, 0, 0, 0)
+        self[1].margins = (0, 0, 0, 0)
 
     @property
     def printing(self):

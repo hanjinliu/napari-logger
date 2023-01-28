@@ -7,7 +7,25 @@
 [![codecov](https://codecov.io/gh/hanjinliu/napari-logger/branch/main/graph/badge.svg)](https://codecov.io/gh/hanjinliu/napari-logger)
 [![napari hub](https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-logger)](https://napari-hub.org/plugins/napari-logger)
 
-A logger widget for napari
+A logger widget for napari.
+
+![](images/widget.png)
+
+`print`, `logging`, `matplotlib` outputs can be optionally streamed to this widget. No need to rewrite your codes!
+
+#### Magicgui Logger Widget
+
+This plugin also provides a magicgui `Logger` widget. You can integrate logger in your plugins.
+
+```python
+from napari_logger import Logger
+from magicgui.widgets import Container
+
+container = Container()
+
+logger = Logger()
+container.append(logger)
+```
 
 ----------------------------------
 
