@@ -175,7 +175,7 @@ class Logger(Widget, logging.Handler):
         try:
             from magicgui.widgets._image import _mpl_image
         except ImportError:  # pragma: no cover
-            from magicgui.widgets import _mpl_image
+            from magicgui import _mpl_image
 
         img = _mpl_image.Image()
 
