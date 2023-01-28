@@ -7,12 +7,14 @@ from napari_logger._magicgui_logger import Logger
 
 class CheckBoxes(Container):
     def __init__(self):
-        self.printing = CheckBox(
+        self._printing = CheckBox(
             text="Printing", tooltip="Print to logger widget"
         )
-        self.html = CheckBox(text="HTML", tooltip="Print as HTML")
-        self.logging = CheckBox(text="Logging", tooltip="Log to logger widget")
-        self.plotting = CheckBox(
+        self._html = CheckBox(text="HTML", tooltip="Print as HTML")
+        self._logging = CheckBox(
+            text="Logging", tooltip="Log to logger widget"
+        )
+        self._plotting = CheckBox(
             text="Plotting", tooltip="Plot to logger widget"
         )
 
@@ -25,6 +27,22 @@ class CheckBoxes(Container):
             labels=False,
         )
         self.margins = (0, 0, 0, 0)
+
+    @property
+    def printing(self):
+        return self._printing
+
+    @property
+    def html(self):
+        return self._html
+
+    @property
+    def logging(self):
+        return self._logging
+
+    @property
+    def plotting(self):
+        return self._plotting
 
 
 class NapariLogger(Container):
